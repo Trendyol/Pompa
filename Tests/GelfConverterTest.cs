@@ -33,7 +33,7 @@ namespace NLog.Targets.Gelf.UnitTest
                 Assert.AreEqual(Dns.GetHostName(), jsonObject.Value<string>("host"));
                 Assert.AreEqual("Test Log Message", jsonObject.Value<string>("short_message"));
                 Assert.AreEqual("Test Log Message", jsonObject.Value<string>("full_message"));
-                Assert.AreEqual(timestamp, jsonObject.Value<DateTime>("timestamp"));
+                Assert.AreEqual(((DateTimeOffset)timestamp).ToUnixTimeSeconds(), jsonObject.Value<long>("timestamp"));
                 Assert.AreEqual(6, jsonObject.Value<int>("level"));
                 Assert.AreEqual("TestFacility", jsonObject.Value<string>("facility"));
                 Assert.AreEqual("", jsonObject.Value<string>("file"));

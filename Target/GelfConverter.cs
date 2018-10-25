@@ -27,9 +27,9 @@ namespace NLog.Targets.Gelf
 
                 GetExceptionMessages(logEventInfo.Exception, out exceptionDetail, out stackDetail);
 
-                logEventInfo.Properties.Add("ExceptionSource", logEventInfo.Exception.Source);
-                logEventInfo.Properties.Add("ExceptionMessage", exceptionDetail);
-                logEventInfo.Properties.Add("StackTrace", stackDetail);
+                logEventInfo.Properties["ExceptionSource"] = logEventInfo.Exception.Source;
+                logEventInfo.Properties["ExceptionMessage"] = exceptionDetail;
+                logEventInfo.Properties["StackTrace"] = stackDetail;
             }
 
             //Figure out the short message
@@ -47,7 +47,7 @@ namespace NLog.Targets.Gelf
                                       Host = Dns.GetHostName(),
                                       ShortMessage = shortMessage,
                                       FullMessage = logEventMessage,
-                                      Timestamp = logEventInfo.TimeStamp,
+                                      Timestamp =  ((DateTimeOffset)logEventInfo.TimeStamp).ToUnixTimeSeconds(),
                                       Level = GetSeverityLevel(logEventInfo.Level),
                                       //Spec says: facility must be set by the client to "GELF" if empty
                                       Facility = (string.IsNullOrEmpty(facility) ? "GELF" : facility),

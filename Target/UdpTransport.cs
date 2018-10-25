@@ -193,9 +193,6 @@ namespace NLog.Targets.Gelf
             }
         }
 
-        public string Scheme
-        {
-            get { return "udp"; }
-        }
+        public string Scheme => "udp";
     }
 }

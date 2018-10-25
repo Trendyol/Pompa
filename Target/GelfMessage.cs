@@ -28,7 +28,7 @@ namespace NLog.Targets.Gelf
         public string ShortMessage { get; set; }
 
         [JsonProperty("timestamp")]
-        public DateTime Timestamp { get; set; }
+        public long Timestamp { get; set; }
 
         [JsonProperty("version")]
         public string Version { get; set; }

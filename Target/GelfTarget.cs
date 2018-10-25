@@ -79,7 +79,7 @@ namespace NLog.Targets.Gelf
                 {
                     string stringValue = par.Layout.Render(logEvent);
 
-                    logEvent.Properties.Add(par.Name, stringValue);
+                    logEvent.Properties[par.Name] = stringValue;
                 }
             }
 
@@ -87,7 +87,7 @@ namespace NLog.Targets.Gelf
             {
                 ///PromoteObjectPropertiesMarker used as property name to indicate that the value should be treated as a object 
                 ///whose proeprties should be mapped to additional fields in graylog 
-                logEvent.Properties.Add(ConverterConstants.PromoteObjectPropertiesMarker, logEvent.Parameters.Last());
+                logEvent.Properties[ConverterConstants.PromoteObjectPropertiesMarker] = logEvent.Parameters.Last();
             }
 
             var jsonObject = Converter.GetGelfJson(logEvent, Facility);

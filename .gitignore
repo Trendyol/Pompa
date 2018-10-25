@@ -64,3 +64,5 @@ _ReSharper*/
 Deploy
 packages
 *.DotSettings
+.idea/
+**/.idea/
