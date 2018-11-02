@@ -15,4 +15,4 @@ build_script:
   - cmd: build.cmd
 
 after_build:
-  - cmd: appveyor PushArtifact "Build\NLog.Targets.Gelf.%GitVersion_NuGetVersion%.nupkg"
+  - cmd: appveyor PushArtifact "Build\Pompa.%GitVersion_NuGetVersion%.nupkg"

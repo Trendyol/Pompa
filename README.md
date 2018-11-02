@@ -1,4 +1,4 @@
-# NLog.Targets.Gelf
+# Pompa
 Gelf4NLog is an [NLog] target implementation to push log messages to [GrayLog2]. It implements the [Gelf] specification and communicates with GrayLog server via UDP.
 
 ## History
@@ -13,11 +13,11 @@ Solution is comprised of 3 projects: *Target* is the actual NLog target implemen
 Use Nuget:
 <!--- 
 ```
-PM> Install-Package NLog.Targets.Gelf -Pre
+PM> Install-Package Pompa -Pre
 ```
 -->
 ```
-PM> Install-Package NLog.Targets.Gelf
+PM> Install-Package Pompa
 ```
 ### Configuration
 Here is a sample nlog configuration snippet:
@@ -30,7 +30,7 @@ Here is a sample nlog configuration snippet:
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 	<extensions>
-	  <add assembly="NLog.Targets.Gelf"/>
+	  <add assembly="Pompa"/>
 	</extensions>
 
 	<targets>

@@ -24,17 +24,17 @@ if "%nuget%" == "" (
 
 REM Restoring Packages
 ECHO Restoring Packages
-call "%nuget%" restore "NLog.Targets.Gelf.sln"
+call "%nuget%" restore "Pompa.sln"
 if not "%errorlevel%"=="0" goto failure
 
 ECHO Running MSBUILD
 REM Build
-msbuild NLog.Targets.Gelf.sln /p:Configuration="%config%" /m /v:M /fl /flp:LogFile=msbuild.log;Verbosity=Normal /nr:false
+msbuild Pompa.sln /p:Configuration="%config%" /m /v:M /fl /flp:LogFile=msbuild.log;Verbosity=Normal /nr:false
 
 REM Package
 ECHO Building pacakges
 mkdir Build
-call "%nuget%" pack "Target\NLog.Targets.Gelf.csproj" -IncludeReferencedProjects -o Build -p Configuration=%config% %version%
+call "%nuget%" pack "Target\Pompa.csproj" -IncludeReferencedProjects -o Build -p Configuration=%config% %version%
 if not "%errorlevel%"=="0" goto failure
 
 
