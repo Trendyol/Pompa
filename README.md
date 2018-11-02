@@ -62,14 +62,14 @@ Options are the following:
 * __facility:__ The graylog2 facility to send log messages
 * __sendLastFormatParameter:__ default false. If true last parameter of message format will be sent to graylog as separate field per property
 
-###Code
+### Code
 ```c#
 //excerpt from ConsoleRunner
 var eventInfo = new LogEventInfo
-				{
-					Message = comic.Title,
-					Level = LogLevel.Info,
-				};
+{
+	Message = comic.Title,
+	Level = LogLevel.Info,
+};
 eventInfo.Properties.Add("Publisher", comic.Publisher);
 eventInfo.Properties.Add("ReleaseDate", comic.ReleaseDate);
 Logger.Log(eventInfo);
@@ -87,3 +87,13 @@ will log Publisher and ReleaseDate as separate fields in Graylog
 [NLog]: http://nlog-project.org/
 [GrayLog2]: http://graylog2.org/
 [Gelf]: http://graylog2.org/about/gelf
+
+
+## Contribution
+
+* If you want to contribute to codes, create pull request
+* If you find any bugs or error, create an issue
+
+## License
+
+This project is licensed under the MIT License
