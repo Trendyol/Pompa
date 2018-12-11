@@ -90,9 +90,9 @@ will log Publisher and ReleaseDate as separate fields in Graylog
 
 ## Changes Log
 
-* 1.0
-** Fixed 'timestamp' string warnings
-** Fixed Dictionary issue
+### 1.0
+* Fixed 'timestamp' string warnings
+* Fixed Dictionary issue
 
 ## Contribution
 
