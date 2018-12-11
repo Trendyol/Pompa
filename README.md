@@ -88,6 +88,11 @@ will log Publisher and ReleaseDate as separate fields in Graylog
 [GrayLog2]: http://graylog2.org/
 [Gelf]: http://graylog2.org/about/gelf
 
+## Changes Log
+
+* 1.0
+** Fixed 'timestamp' string warnings
+** Fixed Dictionary issue
 
 ## Contribution
 
